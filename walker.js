@@ -1,12 +1,15 @@
 function walker(step) {
-  this.position = createVector(random(200), random(200));
-  this.step = step
+  this.position = createVector(random(1300), random(500));
+  this.step = step;
+  this.col = random(255);
 
   this.update = function() {
     this.walk();
   }
 
   this.appear = function() {
+    stroke(this.col, 255, 255);
+    fill(this.col, 255, 255);
     point(this.position.x, this.position.y);
   }
 
@@ -29,5 +32,10 @@ function walker(step) {
 
     }
   }
+}
 
+function MixColours(walkerA, walkerB) {
+  if (walkerA.position.equals(walkerB.position)) {
+    console.log("contact");
+  }
 }
